@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Project1 from "./projects/Project1/App";
+import Project2 from "./projects/Project2/App";
+import Regaccountdemo from "./projects/Regaccountdemo/App";
+import Regaccountvalidiation from "./projects/Regaccountvalidiation/App";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/project1" element={<Project1 />} />
+        <Route path="/project2" element={<Project2 />} />
+        <Route path="/Regaccountdemo" element={<Regaccountdemo />} />
+        <Route path="/Regaccountdemo" element={<Regaccountdemo />} />
+        <Route path="/Regaccountvalidiation" element={<Regaccountvalidiation />} />
+        <Route path="/" element={<h2>Chọn một dự án từ menu trên!</h2>} />
+      </Routes>
+    </Router>
   );
 }
 
