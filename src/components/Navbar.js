@@ -1,18 +1,15 @@
-/* src/components/Navbar.js */
 import { Link } from "react-router-dom";
 import { Navbar, Container, Button } from "react-bootstrap";
 
 const NavigationBar = () => {
   const buttons = [
-    // { to: "/project1", label: "Project 1" },
-    // { to: "/project2", label: "Project 2" },
     { to: "/Regaccountdemo", label: "Regaccountdemo" },
     { to: "/Regaccountvalidiation", label: "Regaccountvalidiation" },
     { to: "/ValidateFormLogin", label: "Validate-Form-Login" },
     { to: "/ValidateFormLoginFormik", label: "ValidateFormLoginFormik" },
     { to: "/Router1", label: "Router1" },
     { to: "/Router2", label: "Router2" },
-
+    { to: "/ContactForm", label: "ContactForm" },
   ];
 
   return (
