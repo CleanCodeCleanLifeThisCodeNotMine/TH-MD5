@@ -1,31 +1,38 @@
+import React from "react";
 import { Link } from "react-router-dom";
-import { Navbar, Container, Button } from "react-bootstrap";
 
-const NavigationBar = () => {
-  const buttons = [
-    { to: "/Regaccountdemo", label: "Regaccountdemo" },
-    { to: "/Regaccountvalidiation", label: "Regaccountvalidiation" },
-    { to: "/ValidateFormLogin", label: "Validate-Form-Login" },
-    { to: "/ValidateFormLoginFormik", label: "ValidateFormLoginFormik" },
-    { to: "/Router1", label: "Router1" },
-    { to: "/Router2", label: "Router2" },
-    { to: "/ContactForm", label: "ContactForm" },
-  ];
-
+function Navbar() {
   return (
-    <Navbar bg="light" className="mb-3 p-3">
-      <Container className="d-flex flex-column align-items-center">
-        <h2>Project Menu</h2>
-        <div className="d-flex flex-wrap gap-2 mt-2" style={{ maxWidth: "900px" }}>
-          {buttons.map((btn, index) => (
-            <Button key={index} variant="success" as={Link} to={btn.to} className="text-nowrap">
-              {btn.label}
-            </Button>
-          ))}
-        </div>
-      </Container>
-    </Navbar>
+    <div>
+      <h1 className="project-title">Project Menu</h1>
+      <div className="project-menu">
+        <Link to="/regaccountdemo">
+          <button>Regaccountdemo</button>
+        </Link>
+        <Link to="/regaccountvalidiation">
+          <button>Regaccountvalidiation</button>
+        </Link>
+        <Link to="/validate-form-login">
+          <button>Validate-Form-Login</button>
+        </Link>
+        <Link to="/validateformloginformik">
+          <button>ValidateFormLoginFormik</button>
+        </Link>
+        <Link to="/router1">
+          <button>Router1</button>
+        </Link>
+        <Link to="/router2">
+          <button>Router2</button>
+        </Link>
+        <Link to="/contactform">
+          <button>ContactForm</button>
+        </Link>
+        <Link to="/bookmanager">
+          <button>BookManager</button>
+        </Link>
+      </div>
+    </div>
   );
-};
+}
 
-export default NavigationBar;
+export default Navbar;
