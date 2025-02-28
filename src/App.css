@@ -37,13 +37,55 @@
   }
 }
 
+.navbar-container {
+  position: relative;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .project-menu {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   gap: 8px;
-  padding: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
+  max-height: 200px;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+  padding-bottom: 20px;
+}
+
+.project-menu.show-all {
+  max-height: 1000px; /* Chiều cao đủ để hiện tất cả */
+}
+
+.show-more-btn {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 25px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  color: #1d1d1f;
+  font-weight: 500;
+}
+
+.show-more-btn:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  color: white;
+  background-color: #1d1d1f;
+}
+
+/* Thêm hiệu ứng hover cho menu */
+.project-menu:hover {
+  max-height: 1000px;
 }
 
 .project-menu a {
@@ -101,11 +143,13 @@
 @media (max-width: 768px) {
   .project-menu {
     grid-template-columns: repeat(3, minmax(130px, 1fr));
+    max-height: 160px;
   }
 }
 
 @media (max-width: 480px) {
   .project-menu {
     grid-template-columns: repeat(2, minmax(130px, 1fr));
+    max-height: 120px;
   }
 }

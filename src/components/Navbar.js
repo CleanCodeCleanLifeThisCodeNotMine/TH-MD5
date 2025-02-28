@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 // Định nghĩa mảng chứa thông tin các route
@@ -21,16 +21,31 @@ const menuItems = [
 ];
 
 function Navbar() {
+  const [showAll, setShowAll] = useState(false);
+  const initialVisibleItems = 6; // Số lượng nút hiển thị ban đầu
+
+  const visibleMenuItems = showAll 
+    ? menuItems 
+    : menuItems.slice(0, initialVisibleItems);
+
   return (
-    <div>
+    <div className="navbar-container">
       <h1 className="project-title">Project Menu</h1>
-      <div className="project-menu">
-        {menuItems.map((item, index) => (
+      <div className={`project-menu ${showAll ? 'show-all' : ''}`}>
+        {visibleMenuItems.map((item, index) => (
           <Link key={index} to={item.path}>
             <button>{item.label}</button>
           </Link>
         ))}
       </div>
+      {menuItems.length > initialVisibleItems && (
+        <button 
+          className="show-more-btn"
+          onClick={() => setShowAll(!showAll)}
+        >
+          {showAll ? 'Thu gọn' : 'Xem thêm'}
+        </button>
+      )}
     </div>
   );
 }
