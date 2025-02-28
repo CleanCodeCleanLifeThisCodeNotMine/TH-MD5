@@ -12,6 +12,9 @@ import BookManager from "./projects/BookManager/App";
 import EmailFormwithUpload from "./projects/EmailFormwithUpload/App";
 import ReduxSagaExample from "./projects/ReduxSagaExample/App";
 import ReduxToDoList from "./projects/ReduxToDoList/App";
+import ReduxCart from "./projects/ReduxCart";
+import ReduxGetDeleteUser from "./projects/ReduxGetDeleteUser";
+import ReduxGetPostUpdate from "./projects/ReduxGetPostUpdate";
 import "./App.css";
 
 function App() {
@@ -31,6 +34,9 @@ function App() {
           <Route path="/EmailFormwithUpload" element={<EmailFormwithUpload />} />
           <Route path="/ReduxSagaExample/*" element={<ReduxSagaExample />} />
           <Route path="/ReduxToDoList" element={<ReduxToDoList />} />
+          <Route path="/ReduxCart" element={<ReduxCart />} />
+          <Route path="/ReduxGetDeleteUser" element={<ReduxGetDeleteUser />} />
+          <Route path="/ReduxGetPostUpdate/*" element={<ReduxGetPostUpdate />} />
           <Route path="/" element={<h2>Chọn một dự án từ menu trên!</h2>} />
         </Routes>
       </div>

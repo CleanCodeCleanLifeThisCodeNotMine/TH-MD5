@@ -14,6 +14,10 @@ const menuItems = [
   { path: "/emailformwithupload", label: "EmailFormwithUpload" },
   { path: "/reduxsagaexample", label: "ReduxSagaExample" },
   { path: "/reduxtodolist", label: "ReduxToDoList" },
+  { path: "/reduxcart", label: "ReduxCart" }, 
+  { path: "/reduxgetdeleteuser", label: "ReduxGetDeleteUser"},
+  { path: "/reduxgetpostupdate", label: "ReduxGetPostUpdate"}
+
 ];
 
 function Navbar() {
