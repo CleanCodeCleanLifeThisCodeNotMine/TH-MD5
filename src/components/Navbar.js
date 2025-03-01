@@ -16,8 +16,8 @@ const menuItems = [
   { path: "/reduxtodolist", label: "ReduxToDoList" },
   { path: "/reduxcart", label: "ReduxCart" }, 
   { path: "/reduxgetdeleteuser", label: "ReduxGetDeleteUser"},
-  { path: "/reduxgetpostupdate", label: "ReduxGetPostUpdate"}
-
+  { path: "/reduxgetpostupdate", label: "ReduxGetPostUpdate"},
+  { path: "/books", label: "Book Library"}
 ];
 
 function Navbar() {
