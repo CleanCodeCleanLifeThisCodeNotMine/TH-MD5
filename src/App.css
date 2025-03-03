@@ -50,59 +50,41 @@
   gap: 8px;
   max-height: 200px;
   overflow: hidden;
-  transition: max-height 0.5s ease;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   padding-bottom: 20px;
+  opacity: 1;
+  transform-origin: top;
+  transform: translateY(0);
 }
 
 .project-menu.show-all {
-  max-height: 1000px; /* Chiều cao đủ để hiện tất cả */
-}
-
-/* Make the button style more specific to override Bootstrap */
-.navbar-container .show-more-btn {
-  display: block;
-  margin: 10px auto;
-  padding: 10px 25px;
-  background: rgba(255, 255, 255, 0.8) !important;
-  border: 1px solid rgba(0, 0, 0, 0.05) !important;
-  border-radius: 20px !important;
-  cursor: pointer;
-  font-size: 14px !important;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  color: #1d1d1f !important;
-  font-weight: 500;
-}
-
-.navbar-container .show-more-btn:hover {
-  background-color: #1d1d1f !important;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-  color: white !important;
-}
-
-/* Thêm hiệu ứng hover cho menu */
-.project-menu:hover {
   max-height: 1000px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-menu:not(.show-all) {
+  opacity: 0.95;
+  transform: translateY(-10px);
 }
 
 .project-menu a {
   text-decoration: none;
   display: block;
   width: 100%;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeInDown 0.5s forwards;
 }
 
-/* Make the button styles more specific */
-.navbar-container .project-menu button {
-  background: rgba(255, 255, 255, 0.8) !important;
-  color: #1d1d1f !important;
-  border: 1px solid rgba(0, 0, 0, 0.05) !important;
-  padding: 12px 20px !important;
-  border-radius: 12px !important;
+.project-menu button {
+  background: rgba(255, 255, 255, 0.8);
+  color: #1d1d1f;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 12px 20px;
+  border-radius: 12px;
   cursor: pointer;
-  font-size: 14px !important;
+  font-size: 14px;
   transition: all 0.3s ease;
   width: 100%;
   white-space: nowrap;
@@ -113,23 +95,56 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
-.navbar-container .project-menu button:hover {
-  background-color: #1d1d1f !important;
+.project-menu button:hover {
+  background-color: #1d1d1f;
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-  color: white !important;
+  color: white;
 }
 
-/* Keep the container form button overrides */
-.container form button:hover {
-  transform: none !important;
-  background-color: #0077ED !important;
-  color: white !important;
+.show-more-btn {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 25px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  color: #1d1d1f;
+  font-weight: 500;
 }
 
-.container button:hover {
-  transform: none !important;
+.show-more-btn:hover {
+  background-color: #1d1d1f;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  color: white;
 }
+
+/* Animation cho các nút khi xuất hiện */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Delay animation cho từng nút */
+.project-menu a:nth-child(1) { animation-delay: 0.1s; }
+.project-menu a:nth-child(2) { animation-delay: 0.15s; }
+.project-menu a:nth-child(3) { animation-delay: 0.2s; }
+.project-menu a:nth-child(4) { animation-delay: 0.25s; }
+.project-menu a:nth-child(5) { animation-delay: 0.3s; }
+.project-menu a:nth-child(6) { animation-delay: 0.35s; }
 
 .project-title {
   text-align: center;
